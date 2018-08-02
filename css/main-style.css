@@ -980,3 +980,12 @@ h1, h2, h3, h4, h5, h6,
 .tel i {
 	font-size: 20px;
 }
+
+.calculator input {
+	background-color: transparent;
+	color: #fff;
+}
+
+.calculator td {
+	padding: 5px;
+}
