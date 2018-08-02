@@ -15,7 +15,6 @@
 *{ 
 	padding: 0; 
 	margin: 0; 
-	vertical-align: baseline; 
 }
 a{ text-decoration: none !important; }
 ul{ margin:0; }
@@ -979,4 +978,13 @@ h1, h2, h3, h4, h5, h6,
 
 .tel i {
 	font-size: 20px;
+}
+
+.calculator input {
+	background-color: transparent;
+	color: #fff;
+}
+
+.calculator td {
+	padding: 5px;
 }

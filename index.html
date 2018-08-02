@@ -11,7 +11,7 @@
 	<link rel="stylesheet" type="text/css" href="lib/font-awesome/css/font-awesome.min.css">
 
 	<!-- [ PLUGINS ] -->
-	<link rel="icon" href="images/nc-fav.ico">
+	<link rel="icon" href="images/logo.ico">
 	<link rel="stylesheet" type="text/css" href="css/animate.css">
 	<link rel="stylesheet" type="text/css" href="css/fonts.css"  charset="utf-8" />
 	<link rel="stylesheet" type="text/css" href="css/owl.carousel.css">
@@ -23,23 +23,23 @@
 	<link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css">
 	<link rel="stylesheet" type="text/css" href="css/main-style.css">
 	<link rel="stylesheet" type="text/css" href="css/responsive.css">
-		<script type='text/javascript'>
+	<script type='text/javascript'>
 
-(function()
-{
-  if( window.localStorage )
-  {
-    if( !localStorage.getItem( 'firstLoad' ) )
-    {
-      localStorage[ 'firstLoad' ] = true;
-      window.location.reload();
-    }  
-    else
-      localStorage.removeItem( 'firstLoad' );
-  }
-})();
+		(function()
+		{
+			if( window.localStorage )
+			{
+				if( !localStorage.getItem( 'firstLoad' ) )
+				{
+					localStorage[ 'firstLoad' ] = true;
+					window.location.reload();
+				}  
+				else
+					localStorage.removeItem( 'firstLoad' );
+			}
+		})();
 
-</script>
+	</script>
 	
 <style type='text/css'>
 .demo
@@ -56,21 +56,16 @@
 </head>
 <body class="slideshow">
 
-	<!-- [ PAGE LOADER ] -->
 	<div class="page-loader-wrapper">
 		<div class="loader">
 			
 		</div>
 	</div>
-	<!-- [ END PAGE LOADER ] -->
 
-	<!-- [ MAIN-WRAPPER ] -->
 	<div id="main-wrapper">
 
-		<!-- [ PAGE BACKGROUND ] -->
 		<div class="page-background background" data-image="images/single-bg.jpg"></div>
-		
-		<!-- [ COVER-PAGE ] -->
+	
 		<div id="mobile-icon" class="vhm">
 			<i class="fa fa-bars vhm-item"></i>
 		</div>
@@ -84,15 +79,12 @@
 					<h4>EcoHikers’ Club</h4>
          </div>
 				
-				<!-- [ LOGO ] -->
 				<div id="logo" class="logo anim fadeInUp s01 delay-0-3s">
 					<div class="inner-wrapper">
 						<img src="images/logo.png" alt="Logo">
 					</div>
 				</div>
-				<!-- [ END LOGO ] -->
 
-				<!-- [ SOCIAL ICON ] -->
 				<div class="social-icon anim fadeInUp s01 delay-0-5s">
 					<a class="icon vhm" href="https://www.facebook.com/ecohikers.ge/"><i class="fa fa-facebook vhm-item"></i></a>
 					<a class="icon vhm" href="https://www.instagram.com/ecohikersgeorgia/"><i class="fa fa-instagram vhm-item"></i></a>
@@ -100,7 +92,6 @@
 				<br>
 				</div>
 				<br>
-				<!-- [ END SOCIAL ICON ] -->
 				<div id="logo" class="logo anim fadeInUp s01 delay-0-3s">
 					<h3 class="demo"><b>ჩვენ ვქმნით თავგადასავალს შენთვის!</b></h3><br>
          </div>
@@ -121,15 +112,57 @@
 							<div class="demo">
 								<ul class="align-center list">
 									<li class="list-item">სალაშქრო ინვენტარის გაქირავება</li>
-									<li class="list-item">კარავი</li>
-									<li class="list-item">ქვეშსაგები</li>
-									<li class="list-item">საძილე ტომარა</li>
-									<li class="list-item">სალაშქრო ზურგჩანთა</li>
 								</ul>
 							</div>
 							<span class="line"></span>
 						</section>
 
+						<section class="title-wrapper anim fadeInUp s01 delay-0-5s">
+							<table class="table table-hover table-responsive calculator">
+								<thead>
+									<tr>
+										<th>ინვენტარი</th>
+										<th>რაოდენობა (ცალი)</th>
+										<th>დრო (დღე)</th>
+									</tr>
+								</thead>
+								<tbody>
+										<tr class="calc-row" data-key="tent2">
+											<td>კარავი (2 ადგილიანი)</td>
+											<td><input type="number" class="form-control calc-item calc-item-count"></td>
+											<td><input type="number" class="form-control calc-item calc-item-duration"></td>
+										</tr>
+										<tr class="calc-row" data-key="tent3">
+												<td>კარავი (3 ადგილიანი)</td>
+												<td><input type="number" class="form-control calc-item calc-item-count"></td>
+												<td><input type="number" class="form-control calc-item calc-item-duration"></td>
+											</tr>
+										<tr class="calc-row" data-key="sleepinMat">
+											<td>ქვეშსაგები</td>
+											<td><input type="number" class="form-control calc-item calc-item-count"></td>
+											<td><input type="number" class="form-control calc-item calc-item-duration"></td>
+										</tr>
+										<tr class="calc-row" data-key="sleepinBag">
+											<td>საძილე ტომარა</td>
+											<td><input type="number" class="form-control calc-item calc-item-count"></td>
+											<td><input type="number" class="form-control calc-item calc-item-duration"></td>
+										</tr>
+										<tr class="calc-row" data-key="backPack">
+											<td>სალაშქრო ზურგჩანთა</td>
+											<td><input type="number" class="form-control calc-item calc-item-count"></td>
+											<td><input type="number" class="form-control calc-item calc-item-duration"></td>
+										</tr>
+								</tbody>
+							</table>
+
+							<span class="line"></span>
+
+							<h3 class="demo"><b>ახალი თავგადასავლის საფასური: <span id="result">0</span> ლარი</b></h3>
+
+							<span class="line"></span>
+						</section>
+
+						
 						<div class="contact-form-wrapper">
 							<div class="disable cnt-rmsg"><p id="returnmessage"></p></div>
 							<form id="cntForm" class="contact-form mb40" action="contact_me.php" method="post" accept-charset="utf-8">
@@ -137,7 +170,7 @@
 									<div class="col-md-12 col-sm-12 align-right">
 										<div class="button-wrp">
 											<a target="_blank" href="https://www.facebook.com/pg/tsuecohikers/photos/?tab=album&album_id=807613402740225"type="submit" class="btn btn-color" id="submit">ჩვენი ლაშქრობები</a>
-											<a target="_blank" href="https://www.facebook.com/pg/tsuecohikers/photos/?tab=album&album_id=701206536714246"type="submit" class="btn btn-color">საგანმანათლებლო ღონისძიებები</a>
+											<a target="_blank" href="https://www.facebook.com/pg/tsuecohikers/photos/?tab=album&album_id=701206536714246"type="submit" class="btn btn-color">ღონისძიებები</a>
 										</div>
 									</div>
 								</div>
@@ -169,5 +202,79 @@
 	<!-- [ COMMON SCRIPT ] -->
 	<script src="js/responsive.js"></script>
 	<script src="js/common.js"></script>
+
+	<script>
+
+		let prices = {
+			sleepinBag: 10,
+			tent2: 10,
+			tent3: 15,
+			backPack: 7,
+			sleepinMat: 5
+		}
+		
+
+		document.addEventListener('mouseup', function(event){
+
+			if (event && event.target && event.target.classList.contains('calc-item')) {
+				mainCalc();
+			}
+
+		})
+
+		document.addEventListener('keyup', function(event){
+
+			if (event && event.target && event.target.classList.contains('calc-item')) {
+				mainCalc();
+			}
+
+		})
+		
+		function mainCalc (element) {
+			let sum = 0;
+
+			elements = document.getElementsByClassName('calc-row');
+			
+			for (let index = 0; index < elements.length; index++) {
+				const element = elements[index];
+				sum += getObjects(element);
+			}
+			
+			document.getElementById('result').innerHTML = sum;
+		}
+
+		function getObjects (parent) {
+			
+			let key = parent.getAttribute('data-key');
+			
+			let obj = [];
+			
+			let count = parent.getElementsByClassName('calc-item-count')[0]
+			let duration = parent.getElementsByClassName('calc-item-duration')[0]
+
+			if (count.value != '' && duration.value != '') {
+				obj.push({
+					a: +count.value,
+					b: +duration.value,
+					p: +prices[key]
+				})
+			}
+
+			return calc(obj);
+		}
+
+		function calc (obj) {
+
+				let sum = 0;
+
+				obj.forEach(d => {
+					sum += d.a * d.b * d.p;
+				})
+				
+				return sum;
+			}
+
+		
+	</script>
 </body>
 </html>
