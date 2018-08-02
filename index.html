@@ -221,10 +221,19 @@
 			}
 
 		})
+
+		document.addEventListener('keyup', function(event){
+
+			if (event && event.target && event.target.classList.contains('calc-item')) {
+				mainCalc();
+			}
+
+		})
 		
 		function mainCalc (element) {
 			let sum = 0;
-			elements = document.getElementsByClassName('calc-item');
+
+			elements = document.getElementsByClassName('calc-row');
 			
 			for (let index = 0; index < elements.length; index++) {
 				const element = elements[index];
@@ -234,10 +243,8 @@
 			document.getElementById('result').innerHTML = sum;
 		}
 
-		function getObjects (element) {
+		function getObjects (parent) {
 			
-			let parent = element.parentElement.parentElement;
-
 			let key = parent.getAttribute('data-key');
 			
 			let obj = [];
@@ -257,6 +264,7 @@
 		}
 
 		function calc (obj) {
+
 				let sum = 0;
 
 				obj.forEach(d => {
