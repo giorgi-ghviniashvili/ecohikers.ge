@@ -43,10 +43,10 @@
 	
 <style type='text/css'>
 .demo
-	{
-		font-family:'Conv_BPG Anna',Sans-Serif;
-		
-	}
+{
+	font-family: Helvetica, Roboto, Sans-Serif;
+	text-align: center;
+}
 
 </style>
 
@@ -77,7 +77,7 @@
 				 <div id="logo" class="logo anim fadeInUp s01 delay-0-3s">
 					<h3 class="demo"><b>ეკომოლაშქრეთა კლუბი</b></h3><br>
 					<h4>EcoHikers’ Club</h4>
-         </div>
+         		</div>
 				
 				<div id="logo" class="logo anim fadeInUp s01 delay-0-3s">
 					<div class="inner-wrapper">
@@ -92,9 +92,21 @@
 				<br>
 				</div>
 				<br>
+				<div class="row">
+					<div class="col-md-6 col-sm-12 align-center">
+						<div class="button-wrp">
+							<a target="_blank" href="https://www.facebook.com/tsuecohikers/"type="submit" class="btn btn-color" id="submit">თსუს ეკომოლაშქრეთა კლუბი</a>
+						</div>
+					</div>
+					<div class="col-md-6 col-sm-12 align-center">
+						<div class="button-wrp">
+							<a target="_blank" href="https://www.facebook.com/iliauniEcohikers/"type="submit" class="btn btn-color">ილიაუნის ეკომოლაშქრეთა კლუბი</a>
+						</div>
+					</div>
+				</div>
 				<div id="logo" class="logo anim fadeInUp s01 delay-0-3s">
-					<h3 class="demo"><b>ჩვენ ვქმნით თავგადასავალს შენთვის!</b></h3><br>
-         </div>
+					<h3 class="demo"><b>ჩვენ ვქმნით შენს თავგადასავალს!</b></h3><br>
+         		</div>
 			</div>
 		</div>
 
@@ -122,65 +134,72 @@
 								<thead>
 									<tr>
 										<th>ინვენტარი</th>
+										<th>ფასი</th>
 										<th>რაოდენობა (ცალი)</th>
-										<th>დრო (დღე)</th>
+										<th>ქირაობის დრო (დღე)</th>
 									</tr>
 								</thead>
 								<tbody>
-										<tr class="calc-row" data-key="tent2">
-											<td>კარავი (2 ადგილიანი)</td>
-											<td><input type="number" class="form-control calc-item calc-item-count"></td>
-											<td><input type="number" class="form-control calc-item calc-item-duration"></td>
-										</tr>
-										<tr class="calc-row" data-key="tent3">
-												<td>კარავი (3 ადგილიანი)</td>
-												<td><input type="number" class="form-control calc-item calc-item-count"></td>
-												<td><input type="number" class="form-control calc-item calc-item-duration"></td>
-											</tr>
-										<tr class="calc-row" data-key="sleepinMat">
-											<td>ქვეშსაგები</td>
-											<td><input type="number" class="form-control calc-item calc-item-count"></td>
-											<td><input type="number" class="form-control calc-item calc-item-duration"></td>
-										</tr>
-										<tr class="calc-row" data-key="sleepinBag">
-											<td>საძილე ტომარა</td>
-											<td><input type="number" class="form-control calc-item calc-item-count"></td>
-											<td><input type="number" class="form-control calc-item calc-item-duration"></td>
-										</tr>
-										<tr class="calc-row" data-key="backPack">
-											<td>სალაშქრო ზურგჩანთა</td>
-											<td><input type="number" class="form-control calc-item calc-item-count"></td>
-											<td><input type="number" class="form-control calc-item calc-item-duration"></td>
-										</tr>
+									<tr class="calc-row" data-key="tent2">
+										<td>კარავი (2 ადგილიანი)</td>
+										<td>10</td>
+										<td><input type="number" class="form-control calc-item calc-item-count" min="0"></td>
+										<td><input type="number" class="form-control calc-item calc-item-duration" min="0"></td>
+									</tr>
+									<tr class="calc-row" data-key="tent3">
+										<td>კარავი (3 ადგილიანი)</td>
+										<td>15</td>
+										<td><input type="number" class="form-control calc-item calc-item-count" min="0"></td>
+										<td><input type="number" class="form-control calc-item calc-item-duration" min="0"></td>
+									</tr>
+									<tr class="calc-row" data-key="sleepinMat">
+										<td>ქვეშსაგები</td>
+										<td>5</td>
+										<td><input type="number" class="form-control calc-item calc-item-count" min="0"></td>
+										<td><input type="number" class="form-control calc-item calc-item-duration" min="0"></td>
+									</tr>
+									<tr class="calc-row" data-key="sleepinBag">
+										<td>საძილე ტომარა</td>
+										<td>10</td>
+										<td><input type="number" class="form-control calc-item calc-item-count" min="0"></td>
+										<td><input type="number" class="form-control calc-item calc-item-duration" min="0"></td>
+									</tr>
+									<tr class="calc-row" data-key="backPack">
+										<td>სალაშქრო ზურგჩანთა</td>
+										<td>7</td>
+										<td><input type="number" class="form-control calc-item calc-item-count" min="0"></td>
+										<td><input type="number" class="form-control calc-item calc-item-duration" min="0"></td>
+									</tr>
 								</tbody>
 							</table>
 
 							<span class="line"></span>
-
+							<br>
 							<h3 class="demo"><b>ახალი თავგადასავლის საფასური: <span id="result">0</span> ლარი</b></h3>
 
 							<span class="line"></span>
 						</section>
 
-						
-						<div class="contact-form-wrapper">
-							<div class="disable cnt-rmsg"><p id="returnmessage"></p></div>
-							<form id="cntForm" class="contact-form mb40" action="contact_me.php" method="post" accept-charset="utf-8">
-								<div class="row gt0">
-									<div class="col-md-12 col-sm-12 align-right">
-										<div class="button-wrp">
-											<a target="_blank" href="https://www.facebook.com/pg/tsuecohikers/photos/?tab=album&album_id=807613402740225"type="submit" class="btn btn-color" id="submit">ჩვენი ლაშქრობები</a>
-											<a target="_blank" href="https://www.facebook.com/pg/tsuecohikers/photos/?tab=album&album_id=701206536714246"type="submit" class="btn btn-color">ღონისძიებები</a>
-										</div>
+						<section class="title-wrapper anim fadeInUp s01 delay-0-5s">
+							<div class="row">
+								<div class="col-md-6 col-sm-12 align-center">
+									<div class="button-wrp">
+										<a target="_blank" href="https://www.facebook.com/pg/tsuecohikers/photos/?tab=album&album_id=807613402740225"type="submit" class="btn btn-color" id="submit">ჩვენი ლაშქრობები</a>
 									</div>
 								</div>
-							</form>
-						</div>
-
-							<div class="social-icon anim fadeInUp s01 delay-0-5s">
-									<div class="tel"><i class="fa fa-phone vhm-item"></i><span>+995 598 90 25 15</span></div>
+								<div class="col-md-6 col-sm-12 align-center">
+									<div class="button-wrp">
+										<a target="_blank" href="https://www.facebook.com/pg/tsuecohikers/photos/?tab=album&album_id=701206536714246"type="submit" class="btn btn-color">ღონისძიებები</a>
+									</div>
+								</div>
 							</div>
-		    		</div>
+							<br>
+							<div class="social-icon anim fadeInUp s01 delay-0-5s">
+								<div class="tel"><i class="fa fa-phone vhm-item"></i><span>+995 598 90 25 15</span></div>
+							</div>
+						</section>
+					</div>
+				
 		    	</div>
 
 	    	</div>
@@ -221,10 +240,19 @@
 			}
 
 		})
+
+		document.addEventListener('keyup', function(event){
+
+			if (event && event.target && event.target.classList.contains('calc-item')) {
+				mainCalc();
+			}
+
+		})
 		
 		function mainCalc (element) {
 			let sum = 0;
-			elements = document.getElementsByClassName('calc-item');
+
+			elements = document.getElementsByClassName('calc-row');
 			
 			for (let index = 0; index < elements.length; index++) {
 				const element = elements[index];
@@ -234,10 +262,8 @@
 			document.getElementById('result').innerHTML = sum;
 		}
 
-		function getObjects (element) {
+		function getObjects (parent) {
 			
-			let parent = element.parentElement.parentElement;
-
 			let key = parent.getAttribute('data-key');
 			
 			let obj = [];
@@ -257,6 +283,7 @@
 		}
 
 		function calc (obj) {
+
 				let sum = 0;
 
 				obj.forEach(d => {

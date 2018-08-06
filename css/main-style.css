@@ -15,7 +15,6 @@
 *{ 
 	padding: 0; 
 	margin: 0; 
-	vertical-align: baseline; 
 }
 a{ text-decoration: none !important; }
 ul{ margin:0; }
@@ -306,8 +305,6 @@ img{ max-width: 100%; }
 	height: 100%;
 }
 
-
-}
 /*----------  TYPOGRAPHY  ----------*/
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6{
@@ -965,7 +962,7 @@ h1, h2, h3, h4, h5, h6,
 
 .list {
 	list-style-type: none;
-	font-size: 18px;
+	font-size: 24px;
 }
 
 .list .list-item{
@@ -988,4 +985,9 @@ h1, h2, h3, h4, h5, h6,
 
 .calculator td {
 	padding: 5px;
+	text-align: center;
+}
+
+.button-wrp {
+	min-height: 48px;
 }
