@@ -4,8 +4,11 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	
-	<title>ecohikers.ge</title>
+	<meta property="og:title" content="ecohikers" />
+	<meta property="og:description" content="დაგვიკვეთე შენი თავგადასავალი" />
+	<meta property="og:image" content="https://gist.githubusercontent.com/giorgi-ghviniashvili/48509bf68d294cc6ef90f2baf3ab7dfc/raw/e9e5d2326e6658e5e416b6a5db06086eceb1452f/ogimage.jpg" />
+
+	<title>ecohikers</title>
 	
 	<!-- [ ICON ] -->
 	<link rel="stylesheet" type="text/css" href="lib/font-awesome/css/font-awesome.min.css">
@@ -43,10 +46,10 @@
 	
 <style type='text/css'>
 .demo
-	{
-		font-family:'Conv_BPG Anna',Sans-Serif;
-		
-	}
+{
+	font-family: Helvetica, Roboto, Sans-Serif;
+	text-align: center;
+}
 
 </style>
 
@@ -77,7 +80,7 @@
 				 <div id="logo" class="logo anim fadeInUp s01 delay-0-3s">
 					<h3 class="demo"><b>ეკომოლაშქრეთა კლუბი</b></h3><br>
 					<h4>EcoHikers’ Club</h4>
-         </div>
+         		</div>
 				
 				<div id="logo" class="logo anim fadeInUp s01 delay-0-3s">
 					<div class="inner-wrapper">
@@ -92,9 +95,21 @@
 				<br>
 				</div>
 				<br>
+				<div class="row">
+					<div class="col-md-6 col-sm-12 align-center">
+						<div class="button-wrp">
+							<a target="_blank" href="https://www.facebook.com/tsuecohikers/"type="submit" class="btn btn-color" id="submit">თსუს ეკომოლაშქრეთა კლუბი</a>
+						</div>
+					</div>
+					<div class="col-md-6 col-sm-12 align-center">
+						<div class="button-wrp">
+							<a target="_blank" href="https://www.facebook.com/iliauniEcohikers/"type="submit" class="btn btn-color">ილიაუნის ეკომოლაშქრეთა კლუბი</a>
+						</div>
+					</div>
+				</div>
 				<div id="logo" class="logo anim fadeInUp s01 delay-0-3s">
-					<h3 class="demo"><b>ჩვენ ვქმნით თავგადასავალს შენთვის!</b></h3><br>
-         </div>
+					<h3 class="demo"><b>ჩვენ ვქმნით შენს თავგადასავალს!</b></h3><br>
+         		</div>
 			</div>
 		</div>
 
@@ -122,65 +137,72 @@
 								<thead>
 									<tr>
 										<th>ინვენტარი</th>
-										<th>რაოდენობა (ცალი)</th>
-										<th>დრო (დღე)</th>
+										<th>ფასი</th>
+										<th>რაოდენობა <br> ( ცალი )</th>
+										<th>ქირაობის დრო <br> ( დღე-ღამე )</th>
 									</tr>
 								</thead>
 								<tbody>
-										<tr class="calc-row" data-key="tent2">
-											<td>კარავი (2 ადგილიანი)</td>
-											<td><input type="number" class="form-control calc-item calc-item-count"></td>
-											<td><input type="number" class="form-control calc-item calc-item-duration"></td>
-										</tr>
-										<tr class="calc-row" data-key="tent3">
-												<td>კარავი (3 ადგილიანი)</td>
-												<td><input type="number" class="form-control calc-item calc-item-count"></td>
-												<td><input type="number" class="form-control calc-item calc-item-duration"></td>
-											</tr>
-										<tr class="calc-row" data-key="sleepinMat">
-											<td>ქვეშსაგები</td>
-											<td><input type="number" class="form-control calc-item calc-item-count"></td>
-											<td><input type="number" class="form-control calc-item calc-item-duration"></td>
-										</tr>
-										<tr class="calc-row" data-key="sleepinBag">
-											<td>საძილე ტომარა</td>
-											<td><input type="number" class="form-control calc-item calc-item-count"></td>
-											<td><input type="number" class="form-control calc-item calc-item-duration"></td>
-										</tr>
-										<tr class="calc-row" data-key="backPack">
-											<td>სალაშქრო ზურგჩანთა</td>
-											<td><input type="number" class="form-control calc-item calc-item-count"></td>
-											<td><input type="number" class="form-control calc-item calc-item-duration"></td>
-										</tr>
+									<tr class="calc-row" data-key="tent2">
+										<td>კარავი <br> (2 ადგილიანი)</td>
+										<td>10</td>
+										<td><input type="number" class="form-control calc-item calc-item-count" min="1"></td>
+										<td><input type="number" class="form-control calc-item calc-item-duration" min="1"></td>
+									</tr>
+									<tr class="calc-row" data-key="tent3">
+										<td>კარავი <br> (3 ადგილიანი)</td>
+										<td>15</td>
+										<td><input type="number" class="form-control calc-item calc-item-count" min="1"></td>
+										<td><input type="number" class="form-control calc-item calc-item-duration" min="1"></td>
+									</tr>
+									<tr class="calc-row" data-key="sleepinMat">
+										<td>ქვეშსაგები</td>
+										<td>5</td>
+										<td><input type="number" class="form-control calc-item calc-item-count" min="1"></td>
+										<td><input type="number" class="form-control calc-item calc-item-duration" min="1"></td>
+									</tr>
+									<tr class="calc-row" data-key="sleepinBag">
+										<td>საძილე ტომარა</td>
+										<td>10</td>
+										<td><input type="number" class="form-control calc-item calc-item-count" min="1"></td>
+										<td><input type="number" class="form-control calc-item calc-item-duration" min="1"></td>
+									</tr>
+									<tr class="calc-row" data-key="backPack">
+										<td>სალაშქრო ზურგჩანთა</td>
+										<td>7</td>
+										<td><input type="number" class="form-control calc-item calc-item-count" min="1"></td>
+										<td><input type="number" class="form-control calc-item calc-item-duration" min="1"></td>
+									</tr>
 								</tbody>
 							</table>
 
 							<span class="line"></span>
-
+							<br>
 							<h3 class="demo"><b>ახალი თავგადასავლის საფასური: <span id="result">0</span> ლარი</b></h3>
 
 							<span class="line"></span>
 						</section>
 
-						
-						<div class="contact-form-wrapper">
-							<div class="disable cnt-rmsg"><p id="returnmessage"></p></div>
-							<form id="cntForm" class="contact-form mb40" action="contact_me.php" method="post" accept-charset="utf-8">
-								<div class="row gt0">
-									<div class="col-md-12 col-sm-12 align-right">
-										<div class="button-wrp">
-											<a target="_blank" href="https://www.facebook.com/pg/tsuecohikers/photos/?tab=album&album_id=807613402740225"type="submit" class="btn btn-color" id="submit">ჩვენი ლაშქრობები</a>
-											<a target="_blank" href="https://www.facebook.com/pg/tsuecohikers/photos/?tab=album&album_id=701206536714246"type="submit" class="btn btn-color">ღონისძიებები</a>
-										</div>
+						<section class="title-wrapper anim fadeInUp s01 delay-0-5s">
+							<div class="row">
+								<div class="col-md-6 col-sm-12 align-center">
+									<div class="button-wrp">
+										<a target="_blank" href="https://www.facebook.com/pg/tsuecohikers/photos/?tab=album&album_id=807613402740225"type="submit" class="btn btn-color" id="submit">ჩვენი ლაშქრობები</a>
 									</div>
 								</div>
-							</form>
-						</div>
-
-							<div class="social-icon anim fadeInUp s01 delay-0-5s">
-									<div class="tel"><i class="fa fa-phone vhm-item"></i><span>+995 598 90 25 15</span></div>
+								<div class="col-md-6 col-sm-12 align-center">
+									<div class="button-wrp">
+										<a target="_blank" href="https://www.facebook.com/pg/tsuecohikers/photos/?tab=album&album_id=701206536714246"type="submit" class="btn btn-color">ღონისძიებები</a>
+									</div>
+								</div>
 							</div>
-		    		</div>
+							<br>
+							<div class="social-icon anim fadeInUp s01 delay-0-5s">
+								<div class="tel"><i class="fa fa-phone vhm-item"></i><span>+995 598 90 25 15</span></div>
+							</div>
+						</section>
+					</div>
+				
 		    	</div>
 
 	    	</div>
