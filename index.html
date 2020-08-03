@@ -133,48 +133,11 @@
 						</section>
 
 						<section class="title-wrapper anim fadeInUp s01 delay-0-5s">
-							<table class="table table-hover table-responsive calculator">
-								<thead>
-									<tr>
-										<th>ინვენტარი</th>
-										<th>ფასი</th>
-										<th>რაოდენობა <br> ( ცალი )</th>
-										<th>ქირაობის დრო <br> ( დღე-ღამე )</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr class="calc-row" data-key="tent2">
-										<td>კარავი <br> (2 ადგილიანი)</td>
-										<td>10</td>
-										<td><input type="number" class="form-control calc-item calc-item-count" min="1"></td>
-										<td><input type="number" class="form-control calc-item calc-item-duration" min="1"></td>
-									</tr>
-									<tr class="calc-row" data-key="tent3">
-										<td>კარავი <br> (3 ადგილიანი)</td>
-										<td>15</td>
-										<td><input type="number" class="form-control calc-item calc-item-count" min="1"></td>
-										<td><input type="number" class="form-control calc-item calc-item-duration" min="1"></td>
-									</tr>
-									<tr class="calc-row" data-key="sleepinMat">
-										<td>ქვეშსაგები</td>
-										<td>5</td>
-										<td><input type="number" class="form-control calc-item calc-item-count" min="1"></td>
-										<td><input type="number" class="form-control calc-item calc-item-duration" min="1"></td>
-									</tr>
-									<tr class="calc-row" data-key="sleepinBag">
-										<td>საძილე ტომარა</td>
-										<td>10</td>
-										<td><input type="number" class="form-control calc-item calc-item-count" min="1"></td>
-										<td><input type="number" class="form-control calc-item calc-item-duration" min="1"></td>
-									</tr>
-									<tr class="calc-row" data-key="backPack">
-										<td>სალაშქრო ზურგჩანთა</td>
-										<td>7</td>
-										<td><input type="number" class="form-control calc-item calc-item-count" min="1"></td>
-										<td><input type="number" class="form-control calc-item calc-item-duration" min="1"></td>
-									</tr>
-								</tbody>
-							</table>
+							<div id="table_container">
+								<div class="spinner-border text-light" role="status">
+									<span class="sr-only">Loading...</span>
+								</div>
+							</div>
 
 							<span class="line"></span>
 							<br>
@@ -198,7 +161,10 @@
 							</div>
 							<br>
 							<div class="social-icon anim fadeInUp s01 delay-0-5s">
-								<div class="tel"><i class="fa fa-phone vhm-item"></i><span>+995 558 60 92 12</span></div>
+								<div class="tel">
+									<i class="fa fa-phone vhm-item"></i>
+									<span id="phone"></span>
+								</div>
 							</div>
 						</section>
 					</div>
@@ -220,37 +186,87 @@
 	<script src="js/plugins.js"></script>
 	<script src="js/vegas.min.js"></script>
 	<script src="js/kenburn.js"></script>
+	<script src="js/tabletop.min.js"></script>
 
 	<!-- [ COMMON SCRIPT ] -->
 	<script src="js/responsive.js"></script>
 	<script src="js/common.js"></script>
+	<script src="js/sheet-loader.js"></script>
 
 	<script>
 
-		let prices = {
-			sleepinBag: 10,
-			tent2: 10,
-			tent3: 15,
-			backPack: 7,
-			sleepinMat: 5
-		}
+		let prices = {}
 		
 
-		document.addEventListener('mouseup', function(event){
+		init();
 
-			if (event && event.target && event.target.classList.contains('calc-item')) {
-				mainCalc();
-			}
+		function init() {
+			loadSheet('https://docs.google.com/spreadsheets/d/1v3GRS7dUCEVEMiBdCSNwuHZ2sGzVvZW-TAIpUSlOXRY/edit#gid=0')
+				.then(function(resp) {
+					const data = resp.Data.elements;
 
-		})
+					data.forEach((d, i) => {
+						d.id = i;
+						prices[i] = +d.Price;
+					});
+					
+					if (data && data.length) {
+						const phone = data[0].Tel;
+					
+						document.querySelector('#phone').innerHTML = '+' + phone;
 
-		document.addEventListener('keyup', function(event){
+						initTable(data);
+					}
+				})
+		}
 
-			if (event && event.target && event.target.classList.contains('calc-item')) {
-				mainCalc();
-			}
+		function initTable(data) {
+			const table = document.querySelector('#table_container');
 
-		})
+			table.innerHTML = `
+				<table class="table table-hover table-responsive calculator">
+					<thead>
+						<tr>
+							<th>ინვენტარი</th>
+							<th>ფასი</th>
+							<th>რაოდენობა <br> ( ცალი )</th>
+							<th>ქირაობის დრო <br> ( დღე-ღამე )</th>
+						</tr>
+					</thead>
+					<tbody>
+						${
+							data.map(d => {
+								return `
+									<tr class="calc-row" data-key="${d.id}">
+										<td class="name-td">${d.Inventory}</td>
+										<td class="price-td">${d.Price} ლ</td>
+										<td class="input-td"><input type="number" class="form-control calc-item calc-item-count" min="1"></td>
+										<td class="input-td"><input type="number" class="form-control calc-item calc-item-duration" min="1"></td>
+									</tr>
+								`
+							}).join('')
+						}
+						
+					</tbody>
+				</table>
+			`
+
+			document.addEventListener('mouseup', function(event){
+
+				if (event && event.target && event.target.classList.contains('calc-item')) {
+					mainCalc();
+				}
+
+			})
+
+			document.addEventListener('keyup', function(event){
+
+				if (event && event.target && event.target.classList.contains('calc-item')) {
+					mainCalc();
+				}
+
+			})
+		}
 		
 		function mainCalc (element) {
 			let sum = 0;

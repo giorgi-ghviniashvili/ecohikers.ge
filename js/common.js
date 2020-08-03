@@ -40,7 +40,7 @@ function pageTransition(){
 	var padding_bottom;
 	if($("html").hasClass("mobile-v")){
 		scroll = false;
-		console.log(scroll);
+		// console.log(scroll);
 		padding_top = "70px";
 		padding_bottom = "70px";
 
@@ -49,7 +49,7 @@ function pageTransition(){
 		scroll = true;
 		padding_top = "0";
 		padding_bottom = "0";
-		console.log(scroll);
+		// console.log(scroll);
 	}
 	$('#sections-wrapper').fullpage({
 		anchors: ['home', 'about_us', 'contact_us', 'subscribe', 'location'],
